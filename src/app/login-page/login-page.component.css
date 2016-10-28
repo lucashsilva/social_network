@@ -1,0 +1,40 @@
+app-login-form {
+  position:relative;
+  color: #fff;
+  text-shadow: 5px solid #999;
+}
+
+.navigation-top {
+  padding:20px;
+  background: #eee;
+  width:auto;
+  height:75px;
+  box-shadow: 0px 0px 10px #888888;
+}
+
+.center-box {
+  background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.8) 100%), url('https://images7.alphacoders.com/447/447466.jpg');
+  background-size:cover;
+  height:auto;
+  width:100%;
+  box-shadow: 0px 0px 10px #888888;
+}
+
+.center-box .content {
+  text-align: center;
+  padding:15%;
+}
+
+.center-box .welcome-title {
+  color: #fff;
+  font-size:28px;
+  text-shadow: 5px solid #999;
+  display: inline-block;
+}
+
+.center-box .welcome-message {
+  color: #fff;
+  font-size: 12px;
+  text-shadow: 5px solid #999;
+  display: inline-block;
+}
