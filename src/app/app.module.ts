@@ -11,7 +11,10 @@ import { UserAuthenticationService } from './user-authentication.service';
 
 import { UsersMockService } from './users-mock.service';
 import { LoginFormComponent } from './login-form/login-form.component';
-
+import { FooterComponent } from './footer/footer.component';
+import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome';
+import { JoinComponent } from './join/join.component';
+import { PublicNavComponent } from './public-nav/public-nav.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +22,16 @@ import { LoginFormComponent } from './login-form/login-form.component';
     LoginPageComponent,
     MainComponent,
     LoginFormComponent,
+    FooterComponent,
+    JoinComponent,
+    PublicNavComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     AppRoutingModule,
+    Angular2FontawesomeModule,
   ],
   providers: [UserAuthenticationService, UsersMockService],
   bootstrap: [AppComponent]

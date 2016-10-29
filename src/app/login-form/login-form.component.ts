@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class LoginFormComponent implements OnInit {
   private email: string;
   private password: string;
+  private errorMessage: string;
 
   constructor(private userAuthentication: UserAuthenticationService, private router: Router) { }
 
@@ -19,7 +20,7 @@ export class LoginFormComponent implements OnInit {
     if(this.userAuthentication.login(this.email, this.password)){
       this.router.navigate(['/']);
     }else{
-      this.router.navigate(['/login']);
+      this.errorMessage = "Email ou senha incorretos. Por favor, tente novamente.";
     }
   }
 

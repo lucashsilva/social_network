@@ -5,11 +5,9 @@ import { MainComponent } from './main/main.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 
-
 const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'login',  component: LoginPageComponent },
-  { path: 'loginform',  component: LoginFormComponent },
 ];
 
 @NgModule({

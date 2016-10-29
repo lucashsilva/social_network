@@ -1,20 +1,27 @@
-<form class="form-horizontal">
-  <div class="form-group">
-    <label class="sr-only" for="exampleInputEmail3">Email address</label>
-    <input [(ngModel)]="email" type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
-  </div>
-  <div class="form-group">
-    <label class="sr-only" for="exampleInputPassword3">Password</label>
+<div class="login-box">
+  <div class="md-form">
+    <div class="row">
+      <div class="col-md-12">
+        Já tem uma conta? Conecte-se!
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="sr-only" for="exampleInputEmail3">Email</label>
+      <input (keyup.enter)="login()" [(ngModel)]="email" type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
 
-    <input [(ngModel)]="password" type="password" class="form-control" id="exampleInputPassword3" placeholder="Password">
-  </div>
-  <div class="checkbox">
-    <label>
-      oi
-      {{ email }}
+      <label class="sr-only" for="exampleInputPassword3">Senha</label>
 
-      <input type="checkbox"> Remember me
-    </label>
+      <input (keyup.enter)="login()" [(ngModel)]="password" type="password" class="form-control" id="exampleInputPassword3" placeholder="Senha">
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <button (click)="login()" type="submit" class="btn btn-default">Entrar</button>
+      </div>
+      <div class="col-md-8">
+        <button type="button" class="btn btn-fb"><i class="fa fa-facebook left"></i> Entre pelo Facebook</button>
+      </div>
   </div>
-  <button (click)="login()" type="submit" class="btn btn-default">Sign in</button>
-</form>
+  </div>
+
+  <div *ngIf="errorMessage" class="alert">{{errorMessage}}</div>
+</div>

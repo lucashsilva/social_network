@@ -1,29 +1,46 @@
 import { Injectable } from '@angular/core';
 import { UsersMockService } from './users-mock.service';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class UserAuthenticationService {
 
-  loggedUser = {email: null, token: null};
+  token: string;
 
-  constructor(private mock: UsersMockService) { }
+  constructor(private mock: UsersMockService, private router: Router) {
+    var currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+    this.token = currentUser && currentUser.token;
+  }
+
+  checkCredentials(){
+    if(localStorage.getItem('currentUser') === null || this.token === null){
+      this.router.navigate(['/login']);
+    }
+  }
 
   hasLoggedUser(): boolean {
-    return this.loggedUser.email != null && this.loggedUser.token != null;
+    return this.token != null && localStorage.getItem('currentUser') != null;
   }
 
   login(email: string, password: string): boolean {
-    let token = this.mock.login(email, password);
+    if(this.mock.login(email, password)){
+      this.token = "usuario-autenticado";
 
-    if(token){
-      this.loggedUser.email = email;
-      this.loggedUser.token = token;
+      localStorage.setItem('currentUser', JSON.stringify({email: email, token: this.token}));
 
       return true;
     }
 
     return false;
   }
+
+  logout(): void{
+     this.token = null;
+     localStorage.removeItem('currentUser');
+
+     location.reload();
+   }
 
 }
 

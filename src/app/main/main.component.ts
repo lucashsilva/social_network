@@ -12,9 +12,11 @@ export class MainComponent implements OnInit {
   constructor(private router: Router, private authenticationService: UserAuthenticationService) { }
 
   ngOnInit() {
-    if(!this.authenticationService.hasLoggedUser()){
-      this.router.navigate(['/login']);
-    }
+    this.authenticationService.checkCredentials();
+  }
+
+  logout() {
+    this.authenticationService.logout();
   }
 
 }

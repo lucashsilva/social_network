@@ -1,21 +1,22 @@
-<div class="navigation-top">
-
-</div>
-<div class="center-box">
-  <div class="content">
-    <div class="row">
-      <div class="col-md-3">
+<div class="container-master">
+  <div class="center-box">
+    <div class="nav">
+      <app-public-nav></app-public-nav>
+    </div>
+    <div class="content">
+      <div class="login-container" *ngIf="!join">
         <app-login-form></app-login-form>
+          <div class="switcher">Não possui uma conta? <a (click)="showJoin()">Cadastre-se!</a></div>
       </div>
-
-      <div class="col-md-9">
-        <span class="welcome-title">Welcome to SocialNetworkName!</span>
-        <span class="welcome-message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fringilla ut nibh eu maximus. Curabitur rhoncus, velit et ornare aliquet, risus urna euismod nunc, vel gravida lacus felis a neque. Curabitur nec aliquet magna. Integer varius urna imperdiet est iaculis mattis. Sed sollicitudin semper ante vel congue. Mauris porttitor urna nec magna tristique pulvinar et vel nisi. Cras vel pharetra lorem, vel porta est. Praesent fringilla purus magna, vitae consequat quam facilisis sit amet. Vestibulum lacinia pellentesque mi a facilisis. Cras eros velit, tempus non commodo non, malesuada eget nisl.</span>
+      <div class="join-container" *ngIf="join">
+        <app-join></app-join>
+          <div class="switcher">Já possui uma conta? <a (click)="showJoin()">Entre aqui!</a></div>
       </div>
 
     </div>
 
   </div>
 
+  <app-footer></app-footer>
 
 </div>
