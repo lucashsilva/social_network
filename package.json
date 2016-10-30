@@ -41,5 +41,8 @@
     "ts-node": "1.2.1",
     "tslint": "3.13.0",
     "typescript": "~2.0.3"
-  }
+  },
+  "engines": {
+    "node": "7.0.0"
+  },
 }
