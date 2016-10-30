@@ -1,22 +1,29 @@
 <div class="container-master">
+  <div class="background">
+  </div>
+  <app-public-nav></app-public-nav>
   <div class="center-box">
     <div class="nav">
-      <app-public-nav></app-public-nav>
     </div>
-    <div class="content">
+    <div class="content" *ngIf="!loading">
+      <span class="align-middle">
       <div class="login-container" *ngIf="!join">
-        <app-login-form></app-login-form>
+        <app-login-form (loading)="switchLoad()"></app-login-form>
           <div class="switcher">Não possui uma conta? <a (click)="showJoin()">Cadastre-se!</a></div>
       </div>
       <div class="join-container" *ngIf="join">
         <app-join></app-join>
           <div class="switcher">Já possui uma conta? <a (click)="showJoin()">Entre aqui!</a></div>
       </div>
+      </span>
+    </div>
 
+    <div class="content" *ngIf="loading">
+      <div class="progress">
+          <div class="indeterminate" style="width: 70%"></div>
+      </div>
     </div>
 
   </div>
-
-  <app-footer></app-footer>
 
 </div>

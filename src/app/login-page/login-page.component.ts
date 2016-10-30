@@ -9,12 +9,13 @@ import { Router } from '@angular/router';
 })
 export class LoginPageComponent implements OnInit {
   private join = false;
+  private loading: boolean;
 
   constructor(private router: Router, private authenticationService: UserAuthenticationService) { }
 
   ngOnInit() {
     if(this.authenticationService.hasLoggedUser()){
-      this.router.navigate(['/']);
+
     }else{
       this.router.navigate(['/login'])
     }
@@ -23,4 +24,9 @@ export class LoginPageComponent implements OnInit {
   showJoin(): void {
     this.join = !this.join;
   }
+
+  switchLoad():void {
+    this.loading = !this.loading;
+  }
+
 }

@@ -4,10 +4,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './main/main.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { LoginFormComponent } from './login-form/login-form.component';
+import { PublicNavComponent } from './public-nav/public-nav.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'login',  component: LoginPageComponent },
+  { path: 'navbar', component: PublicNavComponent }
 ];
 
 @NgModule({

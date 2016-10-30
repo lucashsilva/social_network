@@ -3,12 +3,7 @@
   line-height: normal;
 }
 
-.login-box .alert {
-  width:100%;
-  line-height: 11px;
-  padding: 8px;
-}
-
+.login-box {}
 
 .login-box .checkbox {
   line-height: normal;
