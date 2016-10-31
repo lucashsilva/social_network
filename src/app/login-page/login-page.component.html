@@ -5,7 +5,7 @@
   <div class="center-box">
     <div class="nav">
     </div>
-    <div class="content" *ngIf="!loading">
+    <div class="content">
       <span class="align-middle">
       <div class="login-container" *ngIf="!join">
         <app-login-form (loading)="switchLoad()"></app-login-form>
@@ -15,13 +15,21 @@
         <app-join></app-join>
           <div class="switcher">Já possui uma conta? <a (click)="showJoin()">Entre aqui!</a></div>
       </div>
-      </span>
-    </div>
-
-    <div class="content" *ngIf="loading">
-      <div class="progress">
-          <div class="indeterminate" style="width: 70%"></div>
+      <div class="preloader-wrapper big active" *ngIf="loading">
+        <div class="spinner-layer spinner-blue-only">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
       </div>
+      </span>
+
+
+
     </div>
 
   </div>

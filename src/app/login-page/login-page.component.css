@@ -105,3 +105,7 @@ app-public-nav {
   text-align: center;
   width:100%;
 }
+
+.preloader-wrapper {
+  margin:20px;
+}

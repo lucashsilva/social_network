@@ -15,21 +15,23 @@ export class LoginFormComponent implements OnInit {
 
 
 
-  constructor(private userAuthentication: UserAuthenticationService, private router: Router) { }
+  constructor(private authService: UserAuthenticationService, private router: Router) { }
 
   ngOnInit() { }
 
   login() {
     this.loading.emit();
 
-    if(this.userAuthentication.login(this.email, this.password)){
-      this.router.navigate(['/']);
-    }else{
+    this.authService.login(this.email, this.password).subscribe(result => {
+       if(result){
+         this.router.navigate(['/']);
+       }
+     },
+    (err) => {
       this.errorMessage = "Email ou senha incorretos. Por favor, tente novamente.";
-    }
+    });
 
     this.loading.emit();
+
   }
-
-
 }

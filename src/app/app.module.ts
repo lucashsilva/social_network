@@ -9,7 +9,6 @@ import { MainComponent } from './main/main.component';
 import { AppRoutingModule } from './app-routing.module';
 import { UserAuthenticationService } from './user-authentication.service';
 
-import { UsersMockService } from './users-mock.service';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { FooterComponent } from './footer/footer.component';
 import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome';
@@ -33,7 +32,7 @@ import { PublicNavComponent } from './public-nav/public-nav.component';
     AppRoutingModule,
     Angular2FontawesomeModule,
   ],
-  providers: [UserAuthenticationService, UsersMockService],
+  providers: [UserAuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
