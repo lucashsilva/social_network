@@ -1,0 +1,13 @@
+.container-fluid {
+  margin-top:50px;
+  background: #eee;
+}
+
+.center-box {
+  margin:10%;
+  margin-top:0px;
+}
+
+app-footer {
+
+}

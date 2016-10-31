@@ -14,6 +14,8 @@ import { FooterComponent } from './footer/footer.component';
 import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome';
 import { JoinComponent } from './join/join.component';
 import { PublicNavComponent } from './public-nav/public-nav.component';
+import { UserNavComponent } from './user-nav/user-nav.component';
+import { UserSidebarComponent } from './user-sidebar/user-sidebar.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { PublicNavComponent } from './public-nav/public-nav.component';
     FooterComponent,
     JoinComponent,
     PublicNavComponent,
+    UserNavComponent,
+    UserSidebarComponent,
   ],
   imports: [
     BrowserModule,

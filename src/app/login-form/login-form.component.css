@@ -8,3 +8,11 @@
 .login-box .checkbox {
   line-height: normal;
 }
+
+.form-control.ng-valid.ng-dirty.ng-touched {
+  color:#fff;
+}
+
+.form-control {
+  color: #fff;
+}
